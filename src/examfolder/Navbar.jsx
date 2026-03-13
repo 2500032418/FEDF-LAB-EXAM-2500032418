@@ -5,6 +5,7 @@ import UsersList from './UsersList'
 import Registration from './Registration'
 import Home from './Home'
 import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
+import './navbar.css'
 
 export default function Navbar() {
   return (

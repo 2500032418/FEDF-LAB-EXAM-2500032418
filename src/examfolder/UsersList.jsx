@@ -22,6 +22,9 @@ const UsersList = () => {
             <th>Email</th>
             <th>Department</th>
             <th>Semester</th>
+            <th>RollNumber</th>
+            <th>Year</th>
+            <th>Section</th>
           </tr>
         </thead>
         <tbody>
@@ -34,6 +37,9 @@ const UsersList = () => {
                 <td>{user.email}</td>
                 <td>{user.department}</td>
                 <td>{user.semester}</td>
+                <td>{user.rollnumber}</td>
+                <td>{user.year}</td>
+                <td>{user.section}</td>
               </tr>
             ))
           ) : (
