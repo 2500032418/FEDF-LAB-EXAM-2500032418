@@ -12,7 +12,7 @@ const UsersList = () => {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Registered Users</h2>
+      <h2>Department Users List</h2>
       <table border="1" cellPadding="10" style={{ borderCollapse: "collapse" }}>
         <thead>
           <tr>

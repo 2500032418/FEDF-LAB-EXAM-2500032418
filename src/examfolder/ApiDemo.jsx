@@ -15,7 +15,7 @@ export default function Demo3()
     }, []);//empty dependency array
   return (
     <div>
-        <h2><u>Fetch Demo</u></h2>
+        <h2><u>Fetch Api Demo</u></h2>
         {
             error?<b>{error}</b>:
             data.length==0?

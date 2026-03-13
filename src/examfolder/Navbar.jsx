@@ -12,8 +12,8 @@ export default function Navbar() {
     <div>
     <nav>
       <Link to="/">Home</Link> 
-      <Link to="/register">Registration</Link> 
-      <Link to="/users">UsersList</Link>
+      <Link to="/register">Add Department</Link> 
+      <Link to="/users">View Department</Link>
       <Link to="/api">ApiDemo</Link> 
     </nav>
     <Routes>

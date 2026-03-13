@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Registration = () => {
-
   const [departmentData, setDepartmentData] = useState({
     name: "",
     username: "",
@@ -12,48 +11,38 @@ const Registration = () => {
     rollnumber: "",
     year: "",
     section: "",
-
   });
 
   const handleChange = (e) => {
     setDepartmentData({
       ...departmentData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const existingUsers =
-      JSON.parse(localStorage.getItem("users")) || [];
-
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
     existingUsers.push(departmentData);
-
     localStorage.setItem("users", JSON.stringify(existingUsers));
-
     alert("User Registered Successfully");
-
     setDepartmentData({
       name: "",
       username: "",
       password: "",
-      gender: "",
+      email: "",
       department: "",
       semester: "",
       rollnumber: "",
       year: "",
-    section: "",
-
+      section: "",
     });
   };
 
   return (
-    <div>
+    <div className="registration-container">
       <h2>Department Registration</h2>
-
       <form onSubmit={handleSubmit}>
-
         <input
           type="text"
           name="name"
@@ -62,8 +51,6 @@ const Registration = () => {
           onChange={handleChange}
           required
         />
-
-        <br /><br />
 
         <input
           type="text"
@@ -74,8 +61,6 @@ const Registration = () => {
           required
         />
 
-        <br /><br />
-
         <input
           type="password"
           name="password"
@@ -84,9 +69,6 @@ const Registration = () => {
           onChange={handleChange}
           required
         />
-
-        <br /><br />
-
 
         <input
           type="email"
@@ -97,8 +79,6 @@ const Registration = () => {
           required
         />
 
-
-        <br /><br />
         <select
           name="department"
           value={departmentData.department}
@@ -113,7 +93,6 @@ const Registration = () => {
           <option value="Civil">Civil</option>
         </select>
 
-        <br /><br />
         <input
           type="number"
           name="semester"
@@ -122,48 +101,42 @@ const Registration = () => {
           onChange={handleChange}
           required
         />
-        <br/>
-<input
-  type="text"
-  name="rollnumber"
-  placeholder="Roll Number"
-  value={departmentData.rollnumber}
-  onChange={handleChange}
-  required
-/>
 
-<br /><br />
-<select
-  name="year"
-  value={departmentData.year}
-  onChange={handleChange}
-  required
->
-  <option value="">Select Year</option>
-  <option value="1st Year">1st Year</option>
-  <option value="2nd Year">2nd Year</option>
-  <option value="3rd Year">3rd Year</option>
-  <option value="4th Year">4th Year</option>
-</select>
+        <input
+          type="text"
+          name="rollnumber"
+          placeholder="Roll Number"
+          value={departmentData.rollnumber}
+          onChange={handleChange}
+          required
+        />
 
-<br /><br />
+        <select
+          name="year"
+          value={departmentData.year}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Year</option>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3rd Year">3rd Year</option>
+          <option value="4th Year">4th Year</option>
+        </select>
 
-<select
-  name="section"
-  value={departmentData.section}
-  onChange={handleChange}
-  required
->
-  <option value="">Select Section</option>
-  <option value="A">A</option>
-  <option value="B">B</option>
-  <option value="C">C</option>
-</select>
-
-<br /><br />
+        <select
+          name="section"
+          value={departmentData.section}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select Section</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
 
         <button type="submit">Register</button>
-
       </form>
     </div>
   );
